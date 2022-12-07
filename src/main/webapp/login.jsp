@@ -18,7 +18,7 @@
 
  %>
 <form action="LoginValidator" method="post">
-<table> 
+<table>
     <tr><td>UserName: </td><td><input type="text" name="username" value="<%=username%>" /></td></tr>
 <tr><td>Password :</td><td><input type="text" name="password" value="<%=password%>"/></td></tr>
 <tr><td>Remember me: </td><td><input type="checkbox" name="RememberMe" checked/></td></tr>
