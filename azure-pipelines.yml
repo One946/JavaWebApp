@@ -9,19 +9,18 @@ steps:
   displayName: 'Maven pom.xml'
   inputs:
     mavenPomFile: '$(Parameters.mavenPOMFile)'
-
+- task: ManualValidation@0
+  inputs:
+    notifyUsers: |
+      a.poosa@reply.it
+      gius.dagostino@reply.it
+    instructions: 'Continue the build?'
 - task: Snyk.snyk-security-scan.custom-build-release-task.SnykSecurityScan@1
   displayName: 'Snyk scan for open source vulnerabilities'
   inputs:
     serviceConnectionEndpoint: 'Snyk Connection'
     failOnIssues: false
 
-
-- task: ManualValidation@0
-  inputs:
-    notifyUsers: 'a.poosa@reply.it'
-    instructions: 'continue?'
-    onTimeout: reject
 - task: Maven@4
   displayName: 'Maven pom.xml'
   inputs:
