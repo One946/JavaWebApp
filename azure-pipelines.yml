@@ -38,8 +38,8 @@ jobs:
       - task: ManualValidation@0
         timeoutInMinutes: 5
         inputs:
-          instructions: "Hi, please validate"
-          notifyUsers: 'a.poosa@reply.it'
+          instructions: "Hi, please take a look at the snyk output and validate or reject according  to the vulnerabilities"
+          notifyUsers: 'f.pisani@reply.it'
           onTimeout: reject
 
   - job: maven_deploy
