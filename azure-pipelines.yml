@@ -19,9 +19,8 @@ steps:
 
 - task: ManualValidation@0
   inputs:
-    notifyUsers: 'a.poosa@reply.it' 'gius.dagostino@reply.it'
-    instructions:'continue?'
-
+    notifyUsers: 'a.poosa@reply.it'
+    instructions: 'continue?'
 - task: Maven@4
   displayName: 'Maven pom.xml'
   inputs:
