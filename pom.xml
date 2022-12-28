@@ -48,4 +48,28 @@
   <build>
     <finalName>JavaVulnerableLab</finalName>
   </build>
+  <repositories>
+ 	<repository>
+  		<id>DemoFeed</id>
+  		<url>https://pkgs.dev.azure.com/DevOpsDemo946/DevOpsDemo/_packaging/DemoFeed/maven/v1</url>
+  		<releases>
+    		<enabled>true</enabled>
+  		</releases>
+  		<snapshots>
+    		<enabled>true</enabled>
+  		</snapshots>
+	</repository>
+  </repositories>
+  <distributionManagement>
+   	<repository>
+  		<id>DemoFeed</id>
+  		<url>https://pkgs.dev.azure.com/DevOpsDemo946/DevOpsDemo/_packaging/DemoFeed/maven/v1</url>
+  		<releases>
+    		<enabled>true</enabled>
+  		</releases>
+  		<snapshots>
+    		<enabled>true</enabled>
+  		</snapshots>
+	</repository>
+  </distributionManagement>
 </project>
