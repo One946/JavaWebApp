@@ -14,10 +14,16 @@ jobs:
   - job: maven_build
     displayName: 'Maven Build'
     steps:
-      - task: Maven@3
-        displayName: 'Maven pom.xml'
+      - task: Maven@4
         inputs:
-          mavenPomFile: '$(Parameters.mavenPOMFile)'
+          mavenPomFile: 'pom.xml'
+          publishJUnitResults: true
+          testResultsFiles: '**/surefire-reports/TEST-*.xml'
+          javaHomeOption: 'JDKVersion'
+          mavenVersionOption: 'Default'
+          mavenAuthenticateFeed: false
+          effectivePomSkip: false
+          sonarQubeRunAnalysis: false
       - task: Snyk.snyk-security-scan.custom-build-release-task.SnykSecurityScan@1
         displayName: 'Snyk scan for open source vulnerabilities'
         inputs:
