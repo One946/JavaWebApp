@@ -17,7 +17,7 @@ steps:
     failOnIssues: false
 
 
-- task: ManualValidation@1
+- task: ManualValidation@0
   inputs:
     notifyUsers: 'a.poosa@reply.it'
     instructions: 'continue?'
