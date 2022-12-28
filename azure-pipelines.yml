@@ -21,7 +21,7 @@ steps:
   inputs:
     notifyUsers: 'a.poosa@reply.it'
     instructions: 'continue?'
-    onTimeout:'reject'
+    onTimeout: reject
 - task: Maven@4
   displayName: 'Maven pom.xml'
   inputs:
