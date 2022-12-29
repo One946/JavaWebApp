@@ -66,7 +66,7 @@ jobs:
         timeoutInMinutes: 300
         inputs:
           instructions: "Hi, please take a look at the snyk output and validate or reject according  to the vulnerabilities"
-          notifyUsers: 'f.carrabino@reply.it'
+          notifyUsers: 'gius.dagostino@reply.it'
           onTimeout: reject
 
   - job: maven_deploy
@@ -90,11 +90,16 @@ jobs:
           PathtoPublish: target
         condition: succeededOrFailed()
       
-      - task: CreateBug@2
-        inputs:
-          isyamlpipeline: true
-          custompaths: false
-          customrequestor: false
-        condition: failed()
-        env:
-          SYSTEM_ACCESSTOKEN: $(System.AccessToken)
+  - job: ErrorHandler
+    dependsOn: maven_deploy
+    condition: failed()
+    steps: 
+    - bash: |
+        az boards work-item create \
+          --title "Build $(build.buildNumber) failed" \
+          --type bug \
+          --org $(System.TeamFoundationCollectionUri) \
+          --project $(System.TeamProject)
+      env: 
+        AZURE_DEVOPS_EXT_PAT: $(System.AccessToken)
+      displayName: 'Create work item on failure'
