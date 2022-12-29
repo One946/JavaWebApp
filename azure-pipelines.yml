@@ -66,7 +66,7 @@ jobs:
         timeoutInMinutes: 300
         inputs:
           instructions: "Hi, please take a look at the snyk output and validate or reject according  to the vulnerabilities"
-          notifyUsers: 'gius.dagostino@reply.it'
+          notifyUsers: 'f.carrabino@reply.it'
           onTimeout: reject
 
   - job: maven_deploy
