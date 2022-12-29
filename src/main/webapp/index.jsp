@@ -8,6 +8,5 @@
  Welcome to Java Vulnerable Lab 33333! update<br/><br/>
  A Deliberately vulnerable Web Application built on JAVA designed to teach Web Application Security. 
 
-SOME NEW INFOS HERE
 PIPELINE TEST 2
   <%@ include file="footer.jsp" %>
