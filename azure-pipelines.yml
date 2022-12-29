@@ -89,8 +89,12 @@ jobs:
         inputs:
           PathtoPublish: target
         condition: succeededOrFailed()
+      
       - task: CreateBug@2
         inputs:
           isyamlpipeline: true
           custompaths: false
           customrequestor: false
+        condition: failed()
+        env:
+          SYSTEM_ACCESSTOKEN: $(System.AccessToken)
