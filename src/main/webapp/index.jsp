@@ -9,5 +9,5 @@
  A Deliberately vulnerable Web Application built on JAVA designed to teach Web Application Security. 
 
 SOME NEW INFOS HERE
-PIPELINE TEST 1
+PIPELINE TEST 2
   <%@ include file="footer.jsp" %>
