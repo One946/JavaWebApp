@@ -5,7 +5,7 @@
     out.print("Hello "+session.getAttribute("user")+",");
 }
  %>
- Welcome to Java Vulnerable Lab 33333! update<br/><br/>
+ Welcome to Java Vulnerable Lab! update<br/><br/>
  A Deliberately vulnerable Web Application built on JAVA designed to teach Web Application Security. 
 
 PIPELINE TEST 2
