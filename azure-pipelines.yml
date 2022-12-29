@@ -10,10 +10,10 @@ pool:
   vmImage: ubuntu-latest
 
 jobs:
-
   - job: maven_build
     displayName: 'Maven Build'
     steps:
+      - checkout: self
       - task: SonarQubePrepare@5
         inputs:
           SonarQube: 'Conn-To-Tim'
