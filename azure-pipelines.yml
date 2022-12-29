@@ -70,7 +70,7 @@ jobs:
 
   - job: maven_deploy
     displayName: 'Maven Deploy'
-    dependsOn: manual_deploy
+    dependsOn: manual_approval
     steps:
       - task: Maven@3
         displayName: 'Maven pom.xml'
