@@ -8,5 +8,5 @@
  Welcome to Java Vulnerable Lab! update<br/><br/>
  A Deliberately vulnerable Web Application built on JAVA designed to teach Web Application Security. 
 
-PIPELINE TEST 2 !
+PIPELINE TEST 3 !
   <%@ include file="footer.jsp" %>
