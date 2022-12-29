@@ -68,11 +68,6 @@ jobs:
           instructions: "Hi, please take a look at the snyk output and validate or reject according  to the vulnerabilities"
           notifyUsers: 'gius.dagostino@reply.it'
           onTimeout: reject
-      - task: CreateBug@2
-        inputs:
-          isyamlpipeline: true
-          custompaths: false
-          customrequestor: false
 
   - job: maven_deploy
     displayName: 'Maven Deploy'
@@ -94,3 +89,8 @@ jobs:
         inputs:
           PathtoPublish: target
         condition: succeededOrFailed()
+      - task: CreateBug@2
+        inputs:
+          isyamlpipeline: true
+          custompaths: false
+          customrequestor: false
