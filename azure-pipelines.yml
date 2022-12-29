@@ -3,6 +3,13 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
+resources:
+  repositories:
+  - repository: GitHubRepo # The name used to reference this repository in the checkout step
+    type: github
+    endpoint: One946
+    name: One946/JavaWebApp
+
 trigger: 
  branches:
     include:
@@ -15,7 +22,7 @@ jobs:
   - job: maven_build
     displayName: 'Maven Build'
     steps:
-      - checkout: self
+      - checkout: GitHubRepo
       - task: SonarQubePrepare@5
         inputs:
           SonarQube: 'Conn-To-Tim'
