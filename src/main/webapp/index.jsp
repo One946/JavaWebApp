@@ -5,7 +5,7 @@
     out.print("Hello "+session.getAttribute("user")+",");
 }
  %>
- Welcome to Java Vulnerable Lab! update<br/><br/>
+ Welcome to Java Vulnerable Lab 30/12/2022! update<br/><br/>
  A Deliberately vulnerable Web Application built on JAVA designed to teach Web Application Security. 
 
 !One more try !
