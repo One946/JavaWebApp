@@ -9,6 +9,11 @@ trigger:
 
 pool:
   vmImage: 'ubuntu-latest'
+  parameters:
+  - name: User
+variables:
+  - name: User
+    value: 'gius.dagostino@reply.it'
 
 jobs:
   - job: maven_build
@@ -89,17 +94,16 @@ jobs:
         inputs:
           PathtoPublish: target
         condition: succeededOrFailed()
-      
-  - job: ErrorHandler
+  - job: fail
     dependsOn: maven_deploy
     condition: failed()
-    steps: 
-    - bash: |
-        az boards work-item create \
-          --title "Build $(build.buildNumber) failed" \
-          --type bug \
-          --org $(System.TeamFoundationCollectionUri) \
-          --project $(System.TeamProject)
-      env: 
-        AZURE_DEVOPS_EXT_PAT: $(System.AccessToken)
-    displayName: 'Create work item on failure'
+    steps:
+      - publish: '$(System.IncorrectPath)'
+  - job: createTask
+    displayName: Create Bug On Failure
+    dependsOn: fail
+    condition: failed()
+    steps:
+      - template: workitem.yml
+        parameters:
+          AssignedToUser: $(User)    
