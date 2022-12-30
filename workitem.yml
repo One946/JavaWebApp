@@ -1,5 +1,5 @@
 #Yaml file to create a custom work item if pipeline fails
-arameters:
+parameters:
   - name: AssignedToUser
 steps:
   - task: CmdLine@2
