@@ -17,7 +17,7 @@ jobs:
       - checkout: self
       - task: SonarQubePrepare@5
         inputs:
-          SonarQube: 'Conn-To-Tim'
+          SonarQube: 'SQ-Vodafone'
           scannerMode: 'Other'
           extraProperties: |
             # Additional properties that will be passed to the scanner,
