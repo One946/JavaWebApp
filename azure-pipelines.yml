@@ -56,10 +56,11 @@ jobs:
       - task: SonarQubePublish@5
         inputs:
           pollingTimeoutSec: '300'
-      - task: Snyk.snyk-security-scan.custom-build-release-task.SnykSecurityScan@1
-        displayName: 'Snyk scan for open source vulnerabilities'
+      - task: SnykSecurityScan@1
         inputs:
           serviceConnectionEndpoint: 'Snyk Connection'
+          testType: 'app'
+          monitorWhen: 'always'
           failOnIssues: false
 
   - job: manual_approval
