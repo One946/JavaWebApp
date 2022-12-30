@@ -97,8 +97,8 @@ jobs:
   - job: fail
     dependsOn: maven_deploy
     condition: failed()
-    steps:
-      - publish: '$(System.IncorrectPath)'
+    #steps:
+     #  - publish: '$(System.IncorrectPath)'
   - job: createTask
     displayName: Create Bug On Failure
     dependsOn: fail
